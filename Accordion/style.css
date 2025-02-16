@@ -1,0 +1,53 @@
+.accordion {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  width: 400px;
+  margin: auto;
+}
+h1 {
+  text-align: center;
+  color: #333;
+  width: 400px;
+  margin: auto;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-top: 23px;
+  font-size: 30px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+}
+
+.accordion-title {
+  background-color: #f4f4f4;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  border: 1px solid #ccc;
+  transition: background 1s;
+}
+
+.accordion-title:hover {
+  background-color: #cdc8c8;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ccc;
+  font-size: 18px;
+  color: #333;
+}
+
+.accordion-item {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+}
