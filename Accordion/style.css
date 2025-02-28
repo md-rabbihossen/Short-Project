@@ -1,53 +1,112 @@
-.accordion {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  width: 400px;
-  margin: auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.according {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  max-width: 600px;
+  width: 90%;
+  margin: 2rem auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 h1 {
   text-align: center;
-  color: #333;
-  width: 400px;
-  margin: auto;
+  color: #2d3748;
+  max-width: 600px;
+  width: 90%;
+  margin: 2rem auto;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 50px;
-  margin-top: 23px;
-  font-size: 30px;
-  font-weight: bold;
-  border: 1px solid #ccc;
-  background-color: #f4f4f4;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f6f8fa 0%, #edf2f7 100%);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
-.accordion-title {
-  background-color: #f4f4f4;
-  padding: 10px;
+.according-item {
+  border-bottom: 1px solid #e2e8f0;
+  background-color: white;
+}
+
+.according-item:last-child {
+  border-bottom: none;
+}
+
+.according-title {
+  background-color: white;
+  padding: 1.25rem 1.5rem;
   cursor: pointer;
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-  border: 1px solid #ccc;
-  transition: background 1s;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
-.accordion-title:hover {
-  background-color: #cdc8c8;
+.according-title::after {
+  content: "▾";
+  font-size: 1.25rem;
+  font-weight: 300;
+  transition: transform 0.3s ease;
 }
 
-.accordion-content {
-  display: none;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-bottom: 1px solid #ccc;
-  font-size: 18px;
-  color: #333;
+.according-title.active::after {
+  transform: translateY(-50%) rotate(180deg);
 }
 
-.accordion-item {
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
+.according-title:hover {
+  background-color: #f7fafc;
 }
 
-.accordion-item.active .accordion-content {
-  display: block;
+.according-content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: white;
+  color: #4a5568;
+  line-height: 1.6;
+  font-size: 1rem;
+  transition: max-height 0.3s ease-out;
+}
+
+.according-content-inner {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid #edf2f7;
+}
+
+.according-title.active + .according-content {
+  max-height: 500px;
+}
+
+@media (max-width: 640px) {
+  .according,
+  h1 {
+    width: 95%;
+  }
+
+  .according-title {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .according-content-inner {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
 }
